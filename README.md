@@ -85,13 +85,13 @@
 - `LignedeCommande` has a many-to-one relationship with `Produit`.
 - `Produit` has a one-to-many relationship with `LignedeCommande`.
 
-### MySQL Database Tables
+### PostgreSQL Database Tables
 
 #### Clients Table
 
 ```sql
 CREATE TABLE clients (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     nom VARCHAR(255),
     prenom VARCHAR(255),
     adresse VARCHAR(255),
@@ -100,27 +100,28 @@ CREATE TABLE clients (
 );
 
 CREATE TABLE commandes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     date DATE,
     client_id INT,
     FOREIGN KEY (client_id) REFERENCES clients(id)
 );
 
 CREATE TABLE produits (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     nom VARCHAR(255),
     description TEXT,
-    prix DOUBLE
+    prix DOUBLE PRECISION
 );
 
 CREATE TABLE lignesdecommande (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     quantite INT,
     produit_id INT,
     commande_id INT,
     FOREIGN KEY (produit_id) REFERENCES produits(id),
     FOREIGN KEY (commande_id) REFERENCES commandes(id)
 );
+
 ```
 
 ## Screens

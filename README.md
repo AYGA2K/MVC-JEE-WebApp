@@ -1,6 +1,6 @@
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-  <h3>Application web basée sur MVC et Standards JEE</h3>
-  <h3>Ayoub GAROUAT</h3>
+  <h3>Web Application Based on MVC and JEE Standards</h3>
+
 </div>
 
 ### Class Diagram
